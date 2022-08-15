@@ -6,9 +6,11 @@ function* onLoadMoviesAsync({ payload }) {
   try {
     const movieName = payload;
     const response = yield call(fetchMovies, movieName);
-    if (response.status === 200) {
-      yield put(setMovies({ ...response.data }));
-    }
+    console.log(response);
+    // if (response.status === 200) {
+    //   yield put(setMovies({ ...response.data }));
+    // }
+    yield put(setMovies(response));
   } catch (error) {
     console.log(error);
   }

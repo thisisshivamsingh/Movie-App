@@ -11,7 +11,7 @@ const movieSlice = createSlice({
       return name;
     },
     setMovies: (state, action) => {
-      state.moviesList = action.payload;
+      state.moviesList.push(...action.payload);
     },
     getMovie(id) {
       return id;

@@ -3,6 +3,7 @@ import { TextField } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import useStyles from "../styles";
 import { getMovies } from "../redux/feature/movieSlice";
+import MoviesList from "./MoviesList";
 
 const Search = () => {
   const [name, setName] = useState("spider");
@@ -32,6 +33,7 @@ const Search = () => {
           <p className={classes.error}>Invalid Text</p>
         ) : null}
       </from>
+      <MoviesList name={name} />
     </>
   );
 };
